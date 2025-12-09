@@ -30,6 +30,8 @@ Kirat is a content browsing and engagement platform that allows users to:
 - **Hosting:** Cyclic.sh (https://cyclic.sh)
 - **Database:** DynamoDB (included with Cyclic) or external database
 - **Deployment:** Git-based automatic deployment
+- **Frontend:** PWA-enabled, responsive design
+- **UI Framework:** *[To be selected - Tailwind CSS, Material-UI, Bootstrap 5, or Custom]*
 - *[Additional frameworks and tools to be defined]*
 
 ### Non-Functional Requirements
@@ -94,6 +96,52 @@ Kirat is a content browsing and engagement platform that allows users to:
 - Build time requirements
 - Custom domain support
 - Geographic distribution needs
+
+#### NFR-2: Clean, Responsive UI with PWA Support
+**Requirement:** The application must feature a clean, modern UI design that is fully responsive and optimized for Progressive Web App (PWA) deployment.
+
+**Design Principles:**
+- **Clean & Modern:** Minimalist design with clear visual hierarchy
+- **Responsive:** Seamless experience across desktop, tablet, and mobile devices
+- **Mobile-First:** Optimized for mobile usage patterns
+- **PWA-Ready:** Installable as a native-like app experience
+
+**Technical Requirements:**
+
+1. **Responsive Design**
+   - Fluid layouts that adapt to all screen sizes
+   - Breakpoints: Mobile (320px+), Tablet (768px+), Desktop (1024px+)
+   - Touch-friendly interface elements (min 44x44px touch targets)
+   - Flexible images and media
+   - Mobile-optimized navigation patterns
+
+2. **PWA Capabilities**
+   - Service Worker for offline functionality
+   - Web App Manifest for installability
+   - App-like experience (no browser chrome when installed)
+   - Push notifications (optional)
+   - Cache-first strategy for static assets
+   - Background sync for offline submissions
+
+3. **UI/UX Best Practices**
+   - Fast loading times (< 3 seconds on 3G)
+   - Smooth animations and transitions
+   - Accessible (WCAG 2.1 AA compliance)
+   - Intuitive navigation
+   - Clear call-to-action buttons
+   - Consistent design system
+
+4. **Performance Targets**
+   - Lighthouse PWA score: > 90
+   - Lighthouse Performance score: > 85
+   - First Contentful Paint: < 1.8s
+   - Time to Interactive: < 3.9s
+
+**Design Framework Considerations:**
+- Tailwind CSS (utility-first, highly customizable)
+- Material-UI (comprehensive component library)
+- Bootstrap 5 (familiar, responsive grid)
+- Custom CSS (full control, smaller bundle)
 
 ---
 
