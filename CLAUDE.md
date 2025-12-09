@@ -442,7 +442,8 @@ git push origin feature/feature-name
 ### Repository Information
 - **GitHub:** https://github.com/multani-sandeep/kirat
 - **Main Branch:** main
-- **Remote:** origin (HTTPS)
+- **Remote:** origin (SSH via github-kirat)
+- **SSH Key:** ~/.ssh/id_ed25519_kirat
 
 ---
 
