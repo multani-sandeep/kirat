@@ -1,0 +1,27 @@
+# Render.com Blueprint Configuration
+# This file defines the infrastructure for deploying Kirat on Render.com
+
+services:
+  # Web Service (Node.js/Express)
+  - type: web
+    name: kirat
+    runtime: node
+    env: node
+    region: oregon  # Choose: oregon, frankfurt, singapore
+    plan: free  # Free tier
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000  # Render uses port 10000 by default
+      # DATABASE_URL will be automatically populated by Render when you connect the database
+
+# Database (PostgreSQL)
+databases:
+  - name: kirat-db
+    databaseName: kirat
+    plan: free  # Free tier: 90 days, then $7/month (or stays free if inactive)
+    # Render will automatically create DATABASE_URL and connect it to the web service

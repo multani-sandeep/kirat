@@ -26,13 +26,13 @@ Kirat is a content browsing and engagement platform that allows users to:
 - **Safe Community:** Ensures quality and appropriateness through moderation queue
 
 ### Technology Stack
-- **Runtime:** Node.js
-- **Hosting:** Cyclic.sh (https://cyclic.sh)
-- **Database:** DynamoDB (included with Cyclic) or external database
-- **Deployment:** Git-based automatic deployment
+- **Runtime:** Node.js + Express.js
+- **Hosting:** Render.com (https://render.com) - Free tier
+- **Database:** PostgreSQL (included with Render free tier)
+- **Deployment:** Git-based automatic deployment via Blueprint
 - **Frontend:** PWA-enabled, responsive design
-- **UI Framework:** *[To be selected - Tailwind CSS, Material-UI, Bootstrap 5, or Custom]*
-- *[Additional frameworks and tools to be defined]*
+- **UI Framework:** Tailwind CSS (via CDN)
+- **Database Client:** pg (node-postgres)
 
 ### Non-Functional Requirements
 
@@ -240,28 +240,47 @@ Kirat is a content browsing and engagement platform that allows users to:
 
 ### Design Decisions
 
-#### Dec 9, 2025 - Hosting Platform Selection
-- **Context:** Project requires public deployment on a free hosting service (NFR-1). Need a platform that supports the application requirements with zero cost for initial deployment.
-- **Decision:** Selected **Cyclic.sh** (https://cyclic.sh) as the hosting platform
+#### Dec 9, 2025 - Hosting Platform Selection (UPDATED)
+- **Original Decision:** Cyclic.sh - No longer valid (service shutting down)
+- **Updated Decision:** **Render.com** (https://render.com)
+- **Context:** Cyclic.sh announced shutdown. Need to migrate to alternative free hosting platform that supports Node.js + database.
 - **Rationale:**
-  - Free tier includes unlimited apps and 10,000 requests/month
-  - Excellent for Node.js and Express applications
-  - Built-in DynamoDB (serverless database) included
-  - Supports cron jobs for scheduled tasks
-  - Git integration for automatic deployments
-  - Zero configuration deployment
-  - No credit card required for free tier
+  - Free tier includes web service (750 hours/month)
+  - Free PostgreSQL database (90 days free trial, then $7/month or free if inactive)
+  - Better than Cyclic for long-term reliability
+  - Automatic deployments via Git
+  - Blueprint support (render.yaml) for infrastructure as code
+  - Health check monitoring
+  - Easy database management
+  - PostgreSQL more widely supported than DynamoDB
 - **Alternatives Considered:**
-  - Vercel (better for frontend frameworks, less ideal for backend APIs)
-  - Railway ($5/month credit may run out)
-  - Render (limited to 750 hours/month, spins down after inactivity)
-  - Fly.io (more complex setup, requires Docker knowledge)
-  - Netlify (better for static sites)
+  - Railway ($5/month credit - runs out quickly)
+  - Fly.io (more complex Docker setup)
+  - Vercel + Neon (requires serverless refactoring)
 - **Consequences:**
-  - Must design application to work within 10K requests/month limit initially
-  - Should use DynamoDB as primary database or integrate external database
-  - Application must be compatible with Node.js runtime
-  - Can scale to paid tier if traffic increases
+  - Migrated from DynamoDB to PostgreSQL
+  - App spins down after 15 min inactivity (cold starts ~30s)
+  - 750 hours/month limit on free tier (~31 days if always on)
+  - Database persistence maintained across deployments
+  - Can scale to paid tier if needed
+
+#### Dec 9, 2025 - Database Selection
+- **Original:** DynamoDB (Cyclic.sh included)
+- **Updated Decision:** **PostgreSQL**
+- **Context:** Migration from Cyclic.sh requires new database solution
+- **Rationale:**
+  - Industry standard relational database
+  - Free tier on Render.com (90 days, then $7/month)
+  - Better for structured data and complex queries
+  - More familiar to developers than DynamoDB
+  - JSONB support for flexible schemas
+  - Better local development (can use in-memory fallback)
+- **Implementation:**
+  - Created database abstraction layer supporting PostgreSQL and in-memory fallback
+  - In-memory mode for local development (no database setup needed)
+  - PostgreSQL for production on Render
+  - Auto-initialization with CREATE TABLE IF NOT EXISTS
+  - Graceful fallback if database unavailable
 
 ---
 
