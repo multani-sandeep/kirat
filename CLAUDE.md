@@ -152,10 +152,13 @@ Kirat is a content browsing and engagement platform that allows users to:
 
 ### Quick Status
 - ✅ Repository initialized
-- ✅ Git configured with remote
+- ✅ Git configured with remote (SSH)
 - ✅ CLAUDE.md created
 - ✅ Hosting platform selected (Cyclic.sh)
-- ✅ Technology stack defined (Node.js)
+- ✅ Technology stack defined (Node.js, PWA)
+- ✅ Non-functional requirements defined (NFR-1, NFR-2)
+- ✅ Homepage wireframe approved (v1.0)
+- ✅ Design decisions documented
 - ⏳ Project structure - pending
 - ⏳ Dependencies - pending
 - ⏳ Initial implementation - pending
@@ -269,11 +272,11 @@ Kirat is a content browsing and engagement platform that allows users to:
 - [x] Planning document created
 - [x] Application overview defined
 - [x] System architecture designed
-- [x] Homepage wireframe created (DRAFT - awaiting approval)
+- [x] Homepage wireframe created and approved (v1.0)
+- [x] Design decisions documented (features included/excluded)
 
 ### In Progress
-- [ ] Homepage wireframe approval
-- [ ] *[Other current work items]*
+- [ ] *[Current work items]*
 
 ### Planned Features
 
