@@ -269,9 +269,11 @@ Kirat is a content browsing and engagement platform that allows users to:
 - [x] Planning document created
 - [x] Application overview defined
 - [x] System architecture designed
+- [x] Homepage wireframe created (DRAFT - awaiting approval)
 
 ### In Progress
-- [ ] *[Current work items]*
+- [ ] Homepage wireframe approval
+- [ ] *[Other current work items]*
 
 ### Planned Features
 
@@ -346,6 +348,8 @@ cd ~/Documents/multani-sandeep/kirat
 kirat/
 ├── CLAUDE.md          # This file
 ├── README.md          # Public documentation
+├── wireframes/        # UX wireframes and mockups
+│   └── homepage.md    # Homepage wireframe (DRAFT)
 └── [other files]
 ```
 
