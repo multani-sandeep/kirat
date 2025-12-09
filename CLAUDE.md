@@ -17,7 +17,11 @@
 *[To be defined - What is this project about?]*
 
 ### Technology Stack
-*[To be defined - Languages, frameworks, tools]*
+- **Runtime:** Node.js
+- **Hosting:** Cyclic.sh (https://cyclic.sh)
+- **Database:** DynamoDB (included with Cyclic) or external database
+- **Deployment:** Git-based automatic deployment
+- *[Additional frameworks and tools to be defined]*
 
 ### Non-Functional Requirements
 
@@ -93,6 +97,8 @@
 - ✅ Repository initialized
 - ✅ Git configured with remote
 - ✅ CLAUDE.md created
+- ✅ Hosting platform selected (Cyclic.sh)
+- ✅ Technology stack defined (Node.js)
 - ⏳ Project structure - pending
 - ⏳ Dependencies - pending
 - ⏳ Initial implementation - pending
@@ -109,12 +115,28 @@
 
 ### Design Decisions
 
-#### [Date] - Decision Title
-- **Context:** Why this decision was needed
-- **Decision:** What was decided
-- **Rationale:** Why this approach
-- **Alternatives Considered:** Other options
-- **Consequences:** Impact of this decision
+#### Dec 9, 2025 - Hosting Platform Selection
+- **Context:** Project requires public deployment on a free hosting service (NFR-1). Need a platform that supports the application requirements with zero cost for initial deployment.
+- **Decision:** Selected **Cyclic.sh** (https://cyclic.sh) as the hosting platform
+- **Rationale:**
+  - Free tier includes unlimited apps and 10,000 requests/month
+  - Excellent for Node.js and Express applications
+  - Built-in DynamoDB (serverless database) included
+  - Supports cron jobs for scheduled tasks
+  - Git integration for automatic deployments
+  - Zero configuration deployment
+  - No credit card required for free tier
+- **Alternatives Considered:**
+  - Vercel (better for frontend frameworks, less ideal for backend APIs)
+  - Railway ($5/month credit may run out)
+  - Render (limited to 750 hours/month, spins down after inactivity)
+  - Fly.io (more complex setup, requires Docker knowledge)
+  - Netlify (better for static sites)
+- **Consequences:**
+  - Must design application to work within 10K requests/month limit initially
+  - Should use DynamoDB as primary database or integrate external database
+  - Application must be compatible with Node.js runtime
+  - Can scale to paid tier if traffic increases
 
 ---
 
@@ -185,12 +207,30 @@ kirat/
 ## Deployment
 
 ### Deployment Strategy
-*[Document how to deploy]*
+**Platform:** Cyclic.sh
+
+**Deployment Steps:**
+1. Connect GitHub repository to Cyclic.sh
+2. Configure environment variables (if needed)
+3. Push to main branch triggers automatic deployment
+4. Cyclic handles build and deployment automatically
+
+**Cyclic.sh Features Used:**
+- Automatic deployments on git push
+- Built-in DynamoDB database
+- Environment variable management
+- Custom domain support (if needed)
+- Serverless architecture
+- Zero-downtime deployments
+
+**Deployment URL:** *[To be added after first deployment]*
 
 ### Environments
-- **Development:** Local machine
-- **Staging:** *[If applicable]*
-- **Production:** *[If applicable]*
+- **Development:** Local machine (Node.js)
+- **Production:** Cyclic.sh (https://cyclic.sh)
+  - Free tier: Unlimited apps, 10K requests/month
+  - Auto-scaling
+  - Global CDN
 
 ---
 
