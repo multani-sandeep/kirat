@@ -184,10 +184,16 @@ The `render.yaml` file contains all the configuration.
 
 3. **First Deployment:**
    - Render will automatically deploy
-   - Once deployed, run the seed command to populate data:
-     - Go to your web service → "Shell" tab
-     - Run: `npm run seed`
+   - Database will be automatically seeded on first startup (no shell access needed!)
    - Your app will be live at `https://kirat.onrender.com` (or your chosen name)
+
+4. **Manual Seeding (Optional):**
+   If you need to reseed the database, you can use the API endpoint:
+   ```bash
+   curl -X POST https://your-app.onrender.com/api/seed \
+     -H "Authorization: Bearer kirat-seed-2025"
+   ```
+   Change `SEED_TOKEN` in Render environment variables for production security.
 
 ### Environment Variables
 

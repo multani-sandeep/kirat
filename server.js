@@ -35,6 +35,35 @@ app.get('/health', (req, res) => {
   });
 });
 
+// Manual seed endpoint (for admin use only)
+app.post('/api/seed', async (req, res) => {
+  try {
+    // Simple token-based protection
+    const token = req.headers.authorization?.replace('Bearer ', '');
+    const expectedToken = process.env.SEED_TOKEN || 'kirat-seed-2025';
+
+    if (token !== expectedToken) {
+      return res.status(401).json({ error: 'Unauthorized' });
+    }
+
+    console.log('Manual seed triggered via API...');
+    await db.clear();
+    await seedDatabase(false);
+
+    res.json({
+      success: true,
+      message: 'Database seeded successfully',
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    console.error('Error in manual seed:', error);
+    res.status(500).json({
+      error: 'Seeding failed',
+      message: error.message
+    });
+  }
+});
+
 // 404 handler for API routes
 app.use('/api/*', (req, res) => {
   res.status(404).json({
@@ -62,14 +91,21 @@ const db = require('./src/config/database');
 
 async function initializeServer() {
   try {
-    // Only auto-seed if using in-memory store
-    if (db.isInMemory()) {
-      console.log('📦 Auto-seeding database with mock content...');
+    // Initialize database tables (for PostgreSQL)
+    await db.initialize();
+
+    // Check if database is empty and seed if needed
+    const result = await db.scan(1, 0); // Get first item
+
+    if (result.items.length === 0) {
+      console.log('📦 Database is empty, auto-seeding with mock content...');
       await seedDatabase(false); // Pass false to prevent process.exit()
       console.log('✅ Database seeded successfully\n');
+    } else {
+      console.log(`✅ Database already contains ${result.total} items\n`);
     }
   } catch (error) {
-    console.error('⚠️  Error during auto-seeding:', error.message);
+    console.error('⚠️  Error during initialization:', error.message);
   }
 }
 
