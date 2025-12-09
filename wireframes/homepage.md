@@ -1,8 +1,8 @@
-# 🚧 DRAFT - Homepage Wireframe
+# ✅ Homepage Wireframe
 
-> **Status:** DRAFT - Pending Approval
+> **Status:** Approved - Ready for Implementation
 > **Last Updated:** December 9, 2025
-> **Version:** 0.1
+> **Version:** 1.0
 
 ---
 
@@ -28,13 +28,23 @@
 ├─────────────────────────────────────────────────────────────────────┤
 │                                                                     │
 │  ┌─────────────────────────────────────────────────────────────┐  │
+│  │ 💭 What's on your mind?                                      │  │
+│  │ ──────────────────────────────────────────────────────────── │  │
+│  │ ┌───────────────────────────────────────────────────────┐   │  │
+│  │ │ Share your thoughts with the community...             │   │  │
+│  │ │                                                       │   │  │
+│  │ └───────────────────────────────────────────────────────┘   │  │
+│  │                                    [📝 Post Thought] ──────▶ │  │
+│  └─────────────────────────────────────────────────────────────┘  │
+│                                                                     │
+│  ┌─────────────────────────────────────────────────────────────┐  │
 │  │ Content Item #1                              [Text]          │  │
 │  │ ──────────────────────────────────────────────────────────── │  │
 │  │ Lorem ipsum dolor sit amet, consectetur adipiscing elit.     │  │
 │  │ Sed do eiusmod tempor incididunt ut labore et dolore magna   │  │
 │  │ aliqua...                                                    │  │
 │  │                                                              │  │
-│  │ [💭 12 thoughts] [❤️ Like] [💬 Add Thought]                 │  │
+│  │ [💭 12 thoughts] [❤️ Like] [💬 Add Thought] [🔖 Save]       │  │
 │  └─────────────────────────────────────────────────────────────┘  │
 │                                                                     │
 │  ┌─────────────────────────────────────────────────────────────┐  │
@@ -48,7 +58,7 @@
 │  │ └───────────────────────────────────────────────────────┘   │  │
 │  │ Caption: Beautiful sunset over the mountains                │  │
 │  │                                                              │  │
-│  │ [💭 24 thoughts] [❤️ Like] [💬 Add Thought]                 │  │
+│  │ [💭 24 thoughts] [❤️ Like] [💬 Add Thought] [🔖 Save]       │  │
 │  └─────────────────────────────────────────────────────────────┘  │
 │                                                                     │
 │  ┌─────────────────────────────────────────────────────────────┐  │
@@ -63,14 +73,14 @@
 │  │ Title: Tutorial on modern web development                   │  │
 │  │ Duration: 12:35                                             │  │
 │  │                                                              │  │
-│  │ [💭 8 thoughts] [❤️ Like] [💬 Add Thought]                  │  │
+│  │ [💭 8 thoughts] [❤️ Like] [💬 Add Thought] [🔖 Save]        │  │
 │  └─────────────────────────────────────────────────────────────┘  │
 │                                                                     │
 │  ┌─────────────────────────────────────────────────────────────┐  │
 │  │ Content Item #4                              [Text]          │  │
 │  │ ──────────────────────────────────────────────────────────── │  │
 │  │ Another interesting piece of content...                      │  │
-│  │ [💭 5 thoughts] [❤️ Like] [💬 Add Thought]                  │  │
+│  │ [💭 5 thoughts] [❤️ Like] [💬 Add Thought] [🔖 Save]        │  │
 │  └─────────────────────────────────────────────────────────────┘  │
 │                                                                     │
 │                         ⬇️ Scroll for more ⬇️                       │
@@ -100,12 +110,23 @@
 ├──────────────────────────┤
 │                          │
 │ ┌──────────────────────┐ │
+│ │ 💭 What's on your    │ │
+│ │    mind?             │ │
+│ │ ──────────────────── │ │
+│ │ Share your thoughts  │ │
+│ │ ┌──────────────────┐ │ │
+│ │ │ Type here...     │ │ │
+│ │ └──────────────────┘ │ │
+│ │      [📝 Post] ────▶ │ │
+│ └──────────────────────┘ │
+│                          │
+│ ┌──────────────────────┐ │
 │ │ Content #1    [Text] │ │
 │ │ ──────────────────── │ │
 │ │ Lorem ipsum dolor    │ │
 │ │ sit amet...          │ │
 │ │                      │ │
-│ │ 💭12 ❤️ 💬           │ │
+│ │ 💭12 ❤️ 💬 🔖        │ │
 │ └──────────────────────┘ │
 │                          │
 │ ┌──────────────────────┐ │
@@ -117,7 +138,7 @@
 │ │ └──────────────────┘ │ │
 │ │ Caption text...      │ │
 │ │                      │ │
-│ │ 💭24 ❤️ 💬           │ │
+│ │ 💭24 ❤️ 💬 🔖        │ │
 │ └──────────────────────┘ │
 │                          │
 │ ┌──────────────────────┐ │
@@ -129,7 +150,7 @@
 │ │ └──────────────────┘ │ │
 │ │ Tutorial title...    │ │
 │ │                      │ │
-│ │ 💭8 ❤️ 💬            │ │
+│ │ 💭8 ❤️ 💬 🔖         │ │
 │ └──────────────────────┘ │
 │                          │
 │      ⬇️ Scroll more      │
@@ -152,17 +173,26 @@
 │          CONTENT FEED (Infinite)           │
 ├────────────────────────────────────────────┤
 │  ┌──────────────────────────────────────┐  │
+│  │ 💭 What's on your mind?              │  │
+│  │ ──────────────────────────────────── │  │
+│  │ ┌──────────────────────────────────┐ │  │
+│  │ │ Share your thoughts...           │ │  │
+│  │ └──────────────────────────────────┘ │  │
+│  │                   [📝 Post Thought]▶ │  │
+│  └──────────────────────────────────────┘  │
+│                                            │
+│  ┌──────────────────────────────────────┐  │
 │  │ Content #1                    [Text] │  │
 │  │ ──────────────────────────────────── │  │
 │  │ Lorem ipsum dolor sit amet...        │  │
-│  │ 💭12 ❤️ 💬 Add Thought               │  │
+│  │ 💭12 ❤️ 💬 Add Thought 🔖 Save       │  │
 │  └──────────────────────────────────────┘  │
 │                                            │
 │  ┌──────────────────────────────────────┐  │
 │  │ Content #2                   [Image] │  │
 │  │ ──────────────────────────────────── │  │
 │  │ [Image 600x400]                      │  │
-│  │ 💭24 ❤️ 💬 Add Thought               │  │
+│  │ 💭24 ❤️ 💬 Add Thought 🔖 Save       │  │
 │  └──────────────────────────────────────┘  │
 │                                            │
 │             ⬇️ Scroll for more              │
@@ -211,6 +241,35 @@
   - Logout (if logged in)
   - Login/Signup (if not logged in)
 
+### "What's on your mind?" Component
+
+**Purpose:** Allow users to quickly create and share thoughts
+
+**Appearance:**
+- **Position:** Top of content feed, before first content item
+- **Background:** White card with subtle border
+- **Border Radius:** 8px
+- **Padding:** 20px
+
+**Components:**
+- **Title:** "💭 What's on your mind?"
+- **Input Field:**
+  - Multi-line text area (auto-expand)
+  - Placeholder: "Share your thoughts with the community..."
+  - Min height: 60px
+  - Max height: 200px
+- **Post Button:**
+  - Label: "📝 Post Thought"
+  - Alignment: Bottom-right
+  - Primary color button
+  - Disabled until text entered
+
+**Behavior:**
+- Click to focus and expand
+- Type to enable Post button
+- Click Post → Submit thought → Show moderation message → Clear input
+- Mobile: Full-width button
+
 ### Content Feed
 
 **Layout:**
@@ -233,8 +292,9 @@
 3. **Metadata:** Author, timestamp (if applicable)
 4. **Actions Bar:**
    - 💭 Thought count (clickable to view thoughts)
-   - ❤️ Like button
+   - ❤️ Like button (toggle on/off)
    - 💬 Add Thought button (opens modal/form)
+   - 🔖 Save button (bookmark for later, toggle on/off)
 
 ### Infinite Scroll
 
@@ -293,7 +353,35 @@ Click thought count →
   Allow scrolling through thoughts
 ```
 
-### 5. Infinite Scroll
+### 5. Post from "What's on your mind?"
+```
+Click/focus on input field →
+  Field expands (if needed) →
+  User types thought →
+  Post button becomes enabled →
+  Click "Post Thought" →
+  Show loading state →
+  Submit to API →
+  Show "Thanks! Your thought is pending moderation" message →
+  Clear input field →
+  Button returns to disabled state
+```
+
+### 6. Save for Later
+```
+Click Save (🔖) button on content →
+  Button fills/highlights (saved state) →
+  Save to user's saved collection →
+  Show brief "Saved!" toast notification →
+
+To unsave:
+  Click filled Save button →
+  Button returns to outline (unsaved state) →
+  Remove from saved collection →
+  Show brief "Removed from saved" toast
+```
+
+### 7. Infinite Scroll
 ```
 User scrolls down →
   Reaches 80% of page →
@@ -365,34 +453,79 @@ User scrolls down →
 ### API Endpoints Needed
 - `GET /api/content?page=1&limit=10` - Fetch content feed
 - `GET /api/search?q=query` - Search content
-- `POST /api/thoughts` - Submit new thought
+- `POST /api/thoughts` - Submit new standalone thought (from "What's on your mind?")
+- `POST /api/thoughts/:contentId` - Submit thought for specific content
 - `GET /api/thoughts/:contentId` - Get thoughts for content
 - `POST /api/like/:contentId` - Like content
+- `DELETE /api/like/:contentId` - Unlike content
+- `POST /api/save/:contentId` - Save content for later
+- `DELETE /api/save/:contentId` - Remove from saved
+- `GET /api/saved` - Get user's saved content
 
 ---
 
-## Open Questions / To Be Decided
+## Design Decisions Made
 
-1. Should we show author information on content cards?
-2. Do we need filtering options (by type, date, popularity)?
-3. Should there be a "What's on your mind?" post creation at the top?
-4. Do we need content categories/tags visible on cards?
-5. Should we implement "Save for later" functionality?
-6. Do we need social sharing buttons?
-7. Should video auto-play when scrolled into view?
-8. Do we need pagination as an alternative to infinite scroll?
+The following design decisions were made based on user requirements and approved features:
+
+### ✅ Features Included
+
+1. **"What's on your mind?" Post Creation** ✓
+   - Added at top of content feed
+   - Allows quick standalone thought submission
+   - Thoughts go through moderation before publication
+
+2. **"Save for Later" Functionality** ✓
+   - Bookmark button (🔖) on all content cards
+   - Toggle on/off with visual feedback
+   - Saved items accessible from user profile/saved collection
+   - Optimistic UI updates for immediate feedback
+
+### ❌ Features Excluded
+
+1. **Author Information on Content Cards** ✗
+   - Not shown on cards to keep interface clean
+   - Focus on content rather than attribution
+   - Reduces visual clutter
+
+2. **Filtering Options** ✗
+   - No filters by type, date, or popularity
+   - Simplified experience with chronological feed
+   - Reduces complexity for initial version
+
+3. **Content Categories/Tags** ✗
+   - No visible tags on content cards
+   - Maintains clean, minimalist design
+   - Can be added in future iteration if needed
+
+4. **Social Sharing Buttons** ✗
+   - No external social sharing
+   - Keeps users within the app
+   - Focus on internal engagement
+
+5. **Video Auto-play** ✗
+   - Videos do not auto-play when scrolled into view
+   - User must click to play
+   - Respects bandwidth and user preference
+   - Better for accessibility
+
+6. **Pagination Alternative** ✗
+   - Only infinite scroll, no pagination option
+   - Simpler implementation
+   - More mobile-friendly experience
+
+### Design Philosophy
+- **Simplicity First:** Clean, uncluttered interface
+- **Mobile-First:** Optimized for mobile usage patterns
+- **User Control:** Manual actions (play video, save content)
+- **Content Focus:** Minimize metadata, maximize content visibility
+- **Moderation:** All user-generated content reviewed before publication
 
 ---
 
-**Note:** This wireframe is a DRAFT and requires approval before implementation. Please review and provide feedback on:
-- Layout and component placement
-- Interaction patterns
-- Visual hierarchy
-- Missing features or functionality
-- Technical feasibility
+**Note:** This wireframe has been updated based on approved design decisions.
 
----
-
-*Status: DRAFT - Awaiting Approval*
-*Document Version: 0.1*
-*Created: December 9, 2025*
+**Status:** Ready for Implementation
+**Document Version:** 1.0
+**Created:** December 9, 2025
+**Last Updated:** December 9, 2025
