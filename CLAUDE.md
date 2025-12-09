@@ -14,7 +14,16 @@
 **Owner:** multani-sandeep
 
 ### Purpose
-*[To be defined - What is this project about?]*
+Kirat is a content browsing and engagement platform that allows users to:
+- Browse a feed of diverse content (text, images, videos)
+- Add their own thoughts and responses to content
+- Experience a moderated community where thoughts are reviewed before being visible to other users
+
+**Key Features:**
+- **Content Feed:** Multi-format content stream (text, image, video)
+- **Thought Submission:** Users can contribute thoughts and reactions
+- **Content Moderation:** All thoughts are moderated before publication
+- **Safe Community:** Ensures quality and appropriateness through moderation queue
 
 ### Technology Stack
 - **Runtime:** Node.js
@@ -108,10 +117,75 @@
 ## Architecture & Design
 
 ### System Architecture
-*[Document high-level architecture here]*
+**Architecture Pattern:** RESTful API with modular services
+
+**High-Level Components:**
+```
+┌─────────────────┐
+│  User Browser   │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│   Frontend UI   │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│   REST API      │
+│   (Node.js)     │
+└────────┬────────┘
+         │
+    ┌────┴─────┬─────────────┐
+    ▼          ▼             ▼
+┌─────────┐ ┌──────────┐ ┌──────────┐
+│ Content │ │ Thoughts │ │ Moderation│
+│ Service │ │ Service  │ │  Queue   │
+└────┬────┘ └────┬─────┘ └────┬─────┘
+     │           │            │
+     └───────────┴────────────┘
+                 │
+                 ▼
+          ┌─────────────┐
+          │  Database   │
+          │  (DynamoDB) │
+          └─────────────┘
+```
 
 ### Key Components
-*[List major components/modules]*
+
+1. **Content Feed Service**
+   - Retrieve and display content (text, image, video)
+   - Content filtering and pagination
+   - Multi-format content rendering
+
+2. **Thought Management Service**
+   - Thought submission and storage
+   - User thought tracking
+   - Thought-to-content association
+
+3. **Moderation Service**
+   - Moderation queue management
+   - Approval/rejection workflow
+   - Moderator dashboard
+   - Publication status tracking
+
+4. **User Service** *(if authentication required)*
+   - User registration and authentication
+   - User profiles
+   - Permissions and roles (user, moderator, admin)
+
+5. **API Layer**
+   - RESTful endpoints
+   - Request validation
+   - Error handling
+   - Rate limiting
+
+6. **Database Layer**
+   - Content storage
+   - Thought storage with moderation status
+   - User data (if applicable)
+   - Relationships between entities
 
 ### Design Decisions
 
@@ -145,12 +219,47 @@
 ### Completed Features
 - [x] Repository initialization
 - [x] Planning document created
+- [x] Application overview defined
+- [x] System architecture designed
 
 ### In Progress
 - [ ] *[Current work items]*
 
 ### Planned Features
-- [ ] *[Future features]*
+
+**Phase 1: Core Content Feed**
+- [ ] Content feed API endpoints
+- [ ] Support for text content display
+- [ ] Support for image content display
+- [ ] Support for video content display
+- [ ] Feed pagination
+- [ ] Content filtering/sorting
+
+**Phase 2: Thought Submission**
+- [ ] Thought submission form/API
+- [ ] Thought storage with pending status
+- [ ] Associate thoughts with content items
+- [ ] User identification for thoughts
+
+**Phase 3: Moderation System**
+- [ ] Moderation queue interface
+- [ ] Approve/reject thought workflow
+- [ ] Moderator authentication
+- [ ] Moderation status tracking
+- [ ] Publish approved thoughts to feed
+
+**Phase 4: User Features**
+- [ ] User registration/authentication
+- [ ] User profiles
+- [ ] User's thought history
+- [ ] Role-based access (user, moderator, admin)
+
+**Phase 5: Enhanced Features**
+- [ ] Search functionality
+- [ ] Content categories/tags
+- [ ] Notifications for thought approval
+- [ ] Rich text editing for thoughts
+- [ ] Media upload for user content
 
 ### Backlog
 - [ ] *[Ideas for later]*
