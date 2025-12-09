@@ -19,6 +19,69 @@
 ### Technology Stack
 *[To be defined - Languages, frameworks, tools]*
 
+### Non-Functional Requirements
+
+#### NFR-1: Public Deployment on Free Service
+**Requirement:** The application must be deployable publicly on a free hosting service.
+
+**Recommended Free Hosting Platforms:**
+
+1. **Vercel** (https://vercel.com)
+   - Best for: Next.js, React, Vue, static sites
+   - Free tier: Unlimited projects, 100GB bandwidth/month
+   - Features: Automatic HTTPS, global CDN, preview deployments
+   - Deploy: Git integration (auto-deploy on push)
+
+2. **Netlify** (https://netlify.com)
+   - Best for: Static sites, JAMstack, React, Vue
+   - Free tier: 100GB bandwidth/month, 300 build minutes
+   - Features: Forms, serverless functions, split testing
+   - Deploy: Git integration, drag-and-drop
+
+3. **Railway** (https://railway.app)
+   - Best for: Full-stack apps, Node.js, Python, Go, databases
+   - Free tier: $5 credit/month, persistent storage
+   - Features: PostgreSQL, MySQL, Redis included
+   - Deploy: Git integration, Docker support
+
+4. **Render** (https://render.com)
+   - Best for: Web services, static sites, databases
+   - Free tier: 750 hours/month, PostgreSQL included
+   - Features: Auto-deploy, custom domains, HTTPS
+   - Deploy: Git integration, Docker support
+
+5. **Fly.io** (https://fly.io)
+   - Best for: Docker containers, global deployment
+   - Free tier: 3 VMs, 3GB storage, 160GB transfer
+   - Features: Edge deployment, Postgres, Redis
+   - Deploy: flyctl CLI, Dockerfile
+
+6. **GitHub Pages** (https://pages.github.com)
+   - Best for: Static sites, documentation, portfolios
+   - Free tier: Unlimited sites (1 per repo)
+   - Features: Custom domains, HTTPS, Jekyll support
+   - Deploy: Push to gh-pages branch
+
+7. **Cloudflare Pages** (https://pages.cloudflare.com)
+   - Best for: Static sites, JAMstack
+   - Free tier: Unlimited sites, unlimited bandwidth
+   - Features: Cloudflare CDN, serverless functions
+   - Deploy: Git integration
+
+8. **Cyclic** (https://cyclic.sh)
+   - Best for: Node.js, Express, REST APIs
+   - Free tier: Unlimited apps, 10K requests/month
+   - Features: DynamoDB included, cron jobs
+   - Deploy: Git integration
+
+**Selection Criteria:**
+- Application type (static, dynamic, full-stack)
+- Database requirements
+- Expected traffic/bandwidth
+- Build time requirements
+- Custom domain support
+- Geographic distribution needs
+
 ---
 
 ## Project Status
